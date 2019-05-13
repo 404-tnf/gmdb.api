@@ -1,1 +1,1 @@
-# gmdb.spa
+# gmdb.api
