@@ -1,14 +1,11 @@
 package com.example.gmdbProject.Controllers;
 
-import com.example.gmdbProject.DTOs.Movie;
-import com.example.gmdbProject.Models.Movies;
+import com.example.gmdbProject.Models.Movie;
 import com.example.gmdbProject.Services.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
+@CrossOrigin
 @RestController
 public class MoviesController {
 
@@ -20,14 +17,12 @@ public class MoviesController {
     }
 
     @GetMapping(value = "/movies")
-    public List<Movies> getMovies(@RequestParam(value="name", required = true) String name) {
-        return _service.getMoviesBySearchCriteria(name);
+    public Iterable<Movie> getMovies(@RequestParam(value="criteria", required = false) String criteria, @RequestParam(value="value", required = false) String value) {
+        return _service.getMoviesSearchCriteria(criteria,value);
     }
 
-    @PostMapping(value = "/movies")
-    public void postMovies(@RequestBody Movie mov) {
-        Movies movie = new Movies(mov.getName(),mov.getReview(), mov.getDescription(), mov.getImageURL());
-        System.out.println("=========================================================" + movie.getId());
-        _service.addMovieToDatabase(movie);
+    @GetMapping(value = "/allMovies")
+    public Iterable<Movie> allMovies() {
+        return _service.getAllMovies();
     }
 }

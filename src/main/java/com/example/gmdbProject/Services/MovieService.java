@@ -1,12 +1,9 @@
 package com.example.gmdbProject.Services;
 
-import com.example.gmdbProject.Models.Movies;
+import com.example.gmdbProject.Models.Movie;
 import com.example.gmdbProject.Repository.MoviesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class MovieService {
@@ -18,12 +15,28 @@ public class MovieService {
         this._moviesRepository = moviesRepository;
     }
 
-    public List<Movies> getMoviesBySearchCriteria(String criteria) {
-        return this._moviesRepository.findMovies(criteria);
+    public Iterable<Movie> getMoviesSearchCriteria(String criteria, String value) {
+        if ((criteria != null && !criteria.isEmpty()) && (value != null && !value.isEmpty())) {
+        switch (criteria) {
+            case "title":
+                return this._moviesRepository.findMoviesTitle(value);
+            case "actors":
+                return this._moviesRepository.findMoviesActors(value);
+            case "genre":
+                return this._moviesRepository.findMoviesGenre(value);
+            case "language":
+                return this._moviesRepository.findMoviesLanguage(value);
+            default:
+                return this.getAllMovies();
+        }
+        }
+        else{
+            return this.getAllMovies();
+        }
+
     }
 
-    public void addMovieToDatabase(Movies movie) {
-        Movies mov = new Movies(movie.getName(), movie.getReview(), movie.getDescription(), movie.getImageURL());
-        _moviesRepository.save(mov);
+    public Iterable<Movie> getAllMovies() {
+        return _moviesRepository.findAll();
     }
 }
