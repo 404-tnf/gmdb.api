@@ -19,18 +19,21 @@ public class LoginController {
     }
 
     @PostMapping(value = "/login")
-    public void confirmLogin(@RequestBody Login login, HttpServletResponse response) throws IOException {
+    public String confirmLogin(@RequestBody Login login, HttpServletResponse response) throws IOException {
         String val = _service.confirmLogin(login.getEmail(), login.getPassword());
         System.out.println(val);
         if(val.equals("User Not Found")) {
             response.sendError(HttpServletResponse.SC_NOT_FOUND, "User Not Found");
+            return "User Not Found";
         }
         else if(val.equals("Successfully logged in"))
         {
             response.setStatus(HttpServletResponse.SC_ACCEPTED, "Successfully logged in");
+            return "Successfully logged in";
         }
         else{
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Incorrect Password");
+            return "Incorrect Password";
         }
     }
 
