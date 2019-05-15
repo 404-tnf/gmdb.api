@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -16,8 +15,7 @@ import java.util.Date;
 public class Review {
 
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -34,6 +32,7 @@ public class Review {
     @Column(columnDefinition = "TEXT")
     String reviewTitle;
 
+    @Column(columnDefinition = "date", name="lastUpdated")
     @JsonFormat(pattern = "yyyy-MM-dd")
     Date lastUpdated;
 }
