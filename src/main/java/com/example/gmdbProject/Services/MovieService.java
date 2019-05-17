@@ -1,6 +1,7 @@
 package com.example.gmdbProject.Services;
 
 import com.example.gmdbProject.DTOs.MovieReviewDto;
+import com.example.gmdbProject.DTOs.ReviewDto;
 import com.example.gmdbProject.Models.Movie;
 import com.example.gmdbProject.Models.Review;
 import com.example.gmdbProject.Repository.MoviesRepository;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class MovieService {
@@ -22,8 +24,8 @@ public class MovieService {
         this._reviewRepository = reviewRepository;
     }
 
-    public Iterable<MovieReviewDto> getMoviesSearchCriteria(String criteria, String value) {
-        Iterable<Movie> listOfMovies;
+    public List<MovieReviewDto> getMoviesSearchCriteria(String criteria, String value) {
+        List<Movie> listOfMovies;
         if ((criteria != null && !criteria.isEmpty()) && (value != null && !value.isEmpty())) {
             switch (criteria) {
                 case "title":
@@ -46,14 +48,25 @@ public class MovieService {
         }
         else {
             return this.movieReviewIterator(this.getAllMovies());
-        }
+       }
     }
 
-    public Iterable<Movie> getAllMovies() {
-        return _moviesRepository.findAll();
+    public List<Movie> getAllMovies() {
+        return (ArrayList<Movie>)_moviesRepository.findAll();
     }
 
     private MovieReviewDto movieReviewMapper(Movie singleMovie, Iterable<Review> listOfReviews) {
+        List<ReviewDto> listOfReviewLocal  = new ArrayList<>();
+        if(listOfReviews.spliterator().getExactSizeIfKnown() > 0) {
+            listOfReviews.forEach(review -> {
+                ReviewDto newReview = new ReviewDto();
+                newReview.setReviewTitle(review.getReviewTitle());
+                newReview.setReviewText(review.getReviewText());
+                newReview.setEmail(review.getUser().getEmail());
+                newReview.setMovieTitle(review.getMovie().getTitle());
+                listOfReviewLocal.add(newReview);
+            });
+        }
         MovieReviewDto movieReviewDto = new MovieReviewDto();
 
         movieReviewDto.setMovieId(singleMovie.getMovieId());
@@ -81,17 +94,17 @@ public class MovieService {
         movieReviewDto.setCountry(singleMovie.getCountry());
         movieReviewDto.setGenre(singleMovie.getGenre());
         movieReviewDto.setWriter(singleMovie.getWriter());
-        movieReviewDto.setReviews(listOfReviews);
+        movieReviewDto.setReviews(listOfReviewLocal);
 
         return movieReviewDto;
     }
 
-    private Iterable<MovieReviewDto> movieReviewIterator(Iterable<Movie> listOfMovies) {
-        Iterable<Review> listOfReviews;
-        Iterable<MovieReviewDto> listOfMoviesWithReviews = new ArrayList<>();
+    private List<MovieReviewDto> movieReviewIterator(Iterable<Movie> listOfMovies) {
+        List<Review> listOfReviews;
+        List<MovieReviewDto> listOfMoviesWithReviews = new ArrayList<>();
         for (Movie singleMovie : listOfMovies) {
             listOfReviews = this._reviewRepository.findReviewsByMovieId(singleMovie.getMovieId());
-            ((ArrayList<MovieReviewDto>) listOfMoviesWithReviews).add(this.movieReviewMapper(singleMovie, listOfReviews));
+            listOfMoviesWithReviews.add(this.movieReviewMapper(singleMovie, listOfReviews));
         }
         return listOfMoviesWithReviews;
     }

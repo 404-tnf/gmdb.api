@@ -1,6 +1,5 @@
 package com.example.gmdbProject.DTOs;
 
-import com.example.gmdbProject.Models.Review;
 import lombok.Data;
 
 import java.util.Date;
@@ -32,6 +31,6 @@ public class MovieReviewDto {
     public String Country;
     public String Genre;
     public String Writer;
-    public Iterable<Review> reviews;
+    public Iterable<ReviewDto> reviews;
 }
 

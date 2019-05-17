@@ -2,6 +2,7 @@ package com.example.gmdbProject.Models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity(name="MOVIES")
 @Data
 public class Movie
