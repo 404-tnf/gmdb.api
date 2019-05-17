@@ -31,9 +31,8 @@ public class LoginController {
             return "Successfully logged in";
         }
         else{
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Incorrect Password");
+            response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Incorrect Password");
             return "Incorrect Password";
         }
     }
-
 }

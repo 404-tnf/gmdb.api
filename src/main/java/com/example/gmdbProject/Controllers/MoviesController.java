@@ -1,5 +1,6 @@
 package com.example.gmdbProject.Controllers;
 
+import com.example.gmdbProject.DTOs.MovieReviewDto;
 import com.example.gmdbProject.Models.Movie;
 import com.example.gmdbProject.Services.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class MoviesController {
     }
 
     @GetMapping(value = "/movies")
-    public Iterable<Movie> getMovies(@RequestParam(value="criteria", required = false) String criteria, @RequestParam(value="value", required = false) String value) {
+    public Iterable<MovieReviewDto> getMovies(@RequestParam(value="criteria", required = false) String criteria, @RequestParam(value="value", required = false) String value) {
         return _service.getMoviesSearchCriteria(criteria,value);
     }
 

@@ -26,5 +26,7 @@ public interface MoviesRepository extends CrudRepository<Movie, Long>{
     @Query("SELECT m FROM MOVIES m where m.title = :name")
     List<Movie> findMoviesName(@Param("name") String name);
 
+
+
 }
 
