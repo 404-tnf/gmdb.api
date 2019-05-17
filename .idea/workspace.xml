@@ -2,27 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ede7bf74-bb39-4a7a-957d-105719c581d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gmdbProject/DTOs/MovieReviewDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/controllers/LoginControllerTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/controllers/MovieControllerTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/controllers/ReviewControllerTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/example/gmdbProject/Controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/example/gmdbProject/Controllers/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/example/gmdbProject/Controllers/MoviesController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/example/gmdbProject/Controllers/ReviewController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/example/gmdbProject/Models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/example/gmdbProject/Models/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/example/gmdbProject/Repository/MoviesRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/example/gmdbProject/DTOs/MovieReviewDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/example/gmdbProject/DTOs/MovieReviewDto.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/example/gmdbProject/Repository/ReviewRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/example/gmdbProject/Repository/ReviewRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/example/gmdbProject/Services/MovieService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Controllers/MoviesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Controllers/MoviesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Controllers/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Controllers/ReviewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Repository/MoviesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Repository/MoviesRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Repository/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Repository/ReviewRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Services/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Services/MovieService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/META-INF/com.example.gmdbProject.main.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/com/example/gmdbProject/GmdbProjectApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/controllers/LoginControllerTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/controllers/MovieControllerTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controllers/ReviewControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controllers/ReviewControllerTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -45,6 +32,30 @@
     <splitter split-orientation="horizontal" split-proportion="0.6613381">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Controllers/MoviesController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="360">
+                  <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/test/java/controllers/ReviewControllerTests.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="570">
+                  <caret line="103" lean-forward="true" selection-end-line="103" />
+                  <folding>
+                    <element signature="e#0#3617#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Repository/ReviewRepository.java">
               <provider selected="true" editor-type-id="text-editor">
@@ -69,11 +80,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Services/MovieService.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="450">
-                  <caret line="49" column="5" lean-forward="true" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+                <state relative-caret-position="422">
+                  <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="method#movieReviewMapper#0;class#MovieService#0" />
@@ -91,7 +102,7 @@
             <entry file="file://$PROJECT_DIR$/src/main/java/com/example/gmdbProject/DTOs/MovieReviewDto.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="555">
-                  <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+                  <caret line="37" selection-start-line="37" selection-end-line="37" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -147,13 +158,13 @@
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/test/java/controllers/MovieControllerTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/controllers/LoginControllerTests.java" />
-        <option value="$PROJECT_DIR$/src/test/java/controllers/ReviewControllerTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Controllers/ReviewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Controllers/MoviesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Repository/MoviesRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Repository/ReviewRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/gmdbProject/DTOs/MovieReviewDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Services/MovieService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/controllers/ReviewControllerTests.java" />
       </list>
     </option>
   </component>
@@ -282,7 +293,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558104377391" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558104786333" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -458,7 +469,7 @@
     <frame x="-1920" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10063898" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1970181" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -467,16 +478,16 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32871288" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.34404144" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34356436" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32953367" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32953367" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3284974" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32871288" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32871288" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32772276" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="10" weight="0.3284974" />
-      <window_info anchor="bottom" id="Messages" order="11" visible="true" weight="0.3" />
+      <window_info anchor="bottom" id="Build" order="10" weight="0.32772276" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.3" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -681,13 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/controllers/ReviewControllerTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/gmdbProject/DTOs/MovieDto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -699,16 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="556">
           <caret line="98" column="1" lean-forward="true" selection-start-line="15" selection-end-line="98" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Controllers/MoviesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -758,7 +752,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/gmdbProject/DTOs/MovieReviewDto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -767,12 +761,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Services/MovieService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="49" column="5" lean-forward="true" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+        <state relative-caret-position="422">
+          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#movieReviewMapper#0;class#MovieService#0" />
             <element signature="method#movieReviewIterator#0;class#MovieService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/gmdbProject/Controllers/MoviesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/controllers/ReviewControllerTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="103" lean-forward="true" selection-end-line="103" />
+          <folding>
+            <element signature="e#0#3617#0" expanded="true" />
           </folding>
         </state>
       </provider>
