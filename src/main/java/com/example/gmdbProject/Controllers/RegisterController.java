@@ -35,7 +35,7 @@ public class RegisterController {
     }
 
     @PostMapping(value = "/forgotPassword")
-    public String updateUser(@RequestBody TempDto data, HttpServletResponse response) {
+    public String updateUser(@RequestBody TempDto data) {
         if (this._service.hasUserUpdated(data)){
             return "Password Updated";
         }
