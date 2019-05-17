@@ -4,7 +4,11 @@ import com.example.gmdbProject.DTOs.TempDto;
 import com.example.gmdbProject.DTOs.UserDto;
 import com.example.gmdbProject.Services.RegisterService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -34,7 +38,7 @@ public class RegisterController {
         }
     }
 
-    @PostMapping(value = "/forgotPassword")
+    @PostMapping(value = "/forgotPassword", consumes = MediaType.APPLICATION_JSON_VALUE)
     public String updateUser(@RequestBody TempDto data) {
         if (this._service.hasUserUpdated(data)){
             return "Password Updated";
