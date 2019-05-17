@@ -6,10 +6,12 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 
 @Repository
 public interface ReviewRepository extends CrudRepository<Review, Long> {
 
-        @Query("SELECT r FROM Review r where r.movie_id = :id")
-        Iterable<Review> findReviewsByMovieId(@Param("id") long id);
+        @Query("SELECT r FROM Review r where r.Movie.MovieId = :id")
+        List<Review> findReviewsByMovieId(@Param("id") long id);
 }
