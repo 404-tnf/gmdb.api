@@ -24,17 +24,20 @@ public class RegisterController {
     }
 
     @PostMapping(value = "/register")
-    public void create(@RequestBody UserDto data, HttpServletResponse response) throws IOException {
+    public String create(@RequestBody UserDto data, HttpServletResponse response) throws IOException {
         String val = this._service.isSaveSuccessful(data);
         if(val.equals("User Created")) {
             response.setStatus(HttpServletResponse.SC_CREATED);
+            return "User Created";
         }
         else if(val.equals("User Already Exits"))
         {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "User already present");
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST, "User already present");
+            return "User already present";
         }
         else{
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Password and Repeat Password Should Match");
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST, "Password and Repeat Password Should Match");
+            return "Password and Repeat Password Should Match";
         }
     }
 
