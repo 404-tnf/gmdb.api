@@ -21,13 +21,13 @@ public class RegisterService {
 
     public String isSaveSuccessful(UserDto user) {
         System.out.println("Aman:"+user);
-        if(user.getPassword().equals(user.getRepeatPassword())) {
+        if(user.getPassword().equals(user.getValidatePassword())) {
             if(this._registerRepository.getUserBasedOnEmail(user.getEmail()).size() <= 0) {
                 User newUser = new User();
                 newUser.setEmail(user.getEmail());
                 newUser.setPassword(user.getPassword());
-                newUser.setRepeatPassword((user.getRepeatPassword()));
-                newUser.setScreenName(user.getScreenName());
+                newUser.setRepeatPassword((user.getValidatePassword()));
+                newUser.setScreenName(user.getFirstName() + " " + user.getLastName());
                 newUser.setReviews(null);
                 this._registerRepository.save(newUser);
                 return "User Created";

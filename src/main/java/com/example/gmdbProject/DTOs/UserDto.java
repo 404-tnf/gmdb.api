@@ -4,7 +4,8 @@ import lombok.Data;
 @Data
 public class UserDto {
     private String email;
-    private String screenName;
+    private String firstName;
+    private String lastName;
     private String password;
-    private String repeatPassword;
+    private String validatePassword;
 }
