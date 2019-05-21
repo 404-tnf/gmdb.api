@@ -15,8 +15,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 
+import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
-import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -69,7 +69,7 @@ public class MovieControllerTests {
     public void getMovieByActors() throws Exception {
         mockMvc.perform(get("/movies?criteria=actors&value=hard"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$[0].actors", is("hard")));
+                .andExpect(jsonPath("$[1].actors", is("hard")));
     }
 
     @Test
@@ -78,7 +78,7 @@ public class MovieControllerTests {
     public void getMovieByGenre() throws Exception {
         mockMvc.perform(get("/movies?criteria=genre&value=action"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$[0].genre", is("Action")));
+                .andExpect(jsonPath("$[2].genre", is("Action")));
     }
 
     @Test
@@ -94,9 +94,9 @@ public class MovieControllerTests {
         @Transactional
         @Rollback
         public void getAllMovies () throws Exception {
-        mockMvc.perform(get("/allMovies"))
+        mockMvc.perform(get("/movies?criteria=languag&value=hindi"))
                     .andExpect(status().isOk())
-                    .andExpect((jsonPath("$", hasSize(2))));
+                    .andExpect((jsonPath("$", hasSize(5))));
         }
 
     }

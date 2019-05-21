@@ -62,7 +62,7 @@ public class LoginControllerTests {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(json))
                 .andExpect(status().isOk())
-                .andExpect(content().string("Successfully logged in - "+user.getScreenName()));
+                .andExpect(content().string("Successfully logged in - "+user.getScreenName()+"-"+user.getEmail()));
     }
 
     @Test
