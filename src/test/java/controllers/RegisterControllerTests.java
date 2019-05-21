@@ -1,9 +1,10 @@
 package controllers;
 
+
 import com.example.gmdbProject.Models.Login;
 import com.example.gmdbProject.Models.User;
-import com.example.gmdbProject.Repository.LoginRepository;
-import com.example.gmdbProject.Services.LoginService;
+import com.example.gmdbProject.Repository.RegisterRepository;
+import com.example.gmdbProject.Services.RegisterService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,75 +22,76 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = com.example.gmdbProject.Services.LoginService.class)
 @AutoConfigureMockMvc
 @ComponentScan("com.example.gmdbProject")
-public class LoginControllerTests {
+
+public class RegisterControllerTests {
+    @Autowired
+    RegisterService registerService;
 
     @Autowired
-    LoginService loginService;
-
-    @Autowired
-    LoginRepository loginRepository;
+    RegisterRepository registerRepository;
 
     @Autowired
     MockMvc mockMvc;
 
     Login login = null;
-
     User user = null;
 
     @Before
     @Transactional
     @Rollback
     public void setUp() throws Exception {
+
         user = new User();
-        user.setEmail("hardik1@gmail.com");
-        user.setPassword("1234");
-        user.setScreenName("hardik");
-        loginRepository.save(user);
+        user.setEmail("hardik@gmail.com");
+        user.setPassword("11234");
+        user.setRepeatPassword("11234");
+        user.setScreenName("Hardshiv");
+        registerRepository.save(user);
+
+    }
+
+
+    @Test
+    @Transactional
+    @Rollback
+    public void confirmUserCreated() throws Exception {
+        String json = "{\"email\" : \"hardik1@gmail.com\",\"password\" : \"11234\", \"validatePassword\" : \"11234\", \"firstName\" : \"Hardshiv\",\"lastName\" : \"Hardshiv\" }";
+
+        mockMvc.perform(post("/register")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(json))
+                .andExpect(status().isCreated())
+                .andExpect(content().string("User Created"));
     }
 
     @Test
     @Transactional
     @Rollback
-    public void confirmLoginSuccesful() throws Exception {
-        String json = "{\"email\" : \"hardik1@gmail.com\",\"password\" : \"1234\"}";
+    public void confirmUserAlreadyExist() throws Exception {
+        String json = "{\"email\" : \"hardik@gmail.com\",\"password\" : \"11234\", \"validatePassword\" : \"11234\", \"firstName\" : \"Hardshiv\",\"lastName\" : \"Hardshiv\" }";
 
-        mockMvc.perform(post("/login")
+        mockMvc.perform(post("/register")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(json))
-                .andExpect(status().isOk())
-                .andExpect(content().string("Successfully logged in - "+user.getScreenName()));
+                .andExpect(status().isBadRequest())
+                .andExpect(content().string("User already present"));
     }
 
     @Test
     @Transactional
     @Rollback
-    public void confirmLoginNotFound() throws Exception {
-        String json = "{\"email\" : \"hardik@gmail.\",\"password\" : \"1234\"}";
+    public void passwordShouldMatch() throws Exception {
+        String json = "{\"email\" : \"hardik@gmail.com\",\"password\" : \"11234\", \"validatePassword\" : \"1234\", \"firstName\" : \"Hardshiv\",\"lastName\" : \"Hardshiv\" }";
 
-        mockMvc.perform(post("/login")
+        mockMvc.perform(post("/register")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(json))
-                .andExpect(status().isNotFound())
-                .andExpect(content().string("User Not Found"));
+                .andExpect(status().isBadRequest())
+                .andExpect(content().string("Password and Repeat Password Should Match"));
     }
-
-    @Test
-    @Transactional
-    @Rollback
-    public void confirmLoginIncorrectPassword() throws Exception {
-        String json = "{\"email\" : \"hardik@gmail.com\",\"password\" : \"123\"}";
-
-        mockMvc.perform(post("/login")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(json))
-                .andExpect(status().isUnauthorized())
-                .andExpect(content().string("Incorrect Password"));
-    }
-
-
 }
+

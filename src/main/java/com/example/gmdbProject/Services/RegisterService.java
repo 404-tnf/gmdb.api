@@ -20,7 +20,6 @@ public class RegisterService {
     }
 
     public String isSaveSuccessful(UserDto user) {
-        System.out.println("Aman:"+user);
         if(user.getPassword().equals(user.getValidatePassword())) {
             if(this._registerRepository.getUserBasedOnEmail(user.getEmail()).size() <= 0) {
                 User newUser = new User();

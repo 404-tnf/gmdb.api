@@ -26,13 +26,13 @@ public class LoginController {
             response.sendError(HttpServletResponse.SC_NOT_FOUND, "User Not Found");
             return "User Not Found";
         }
-        else if(val.equals("Successfully logged in"))
+        else if(val.equals("Incorrect Password"))
         {
-            return "Successfully logged in";
-        }
-        else{
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Incorrect Password");
             return "Incorrect Password";
+        }
+        else{
+            return val;
         }
     }
 }
