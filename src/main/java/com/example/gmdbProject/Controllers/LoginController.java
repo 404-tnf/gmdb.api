@@ -23,12 +23,12 @@ public class LoginController {
     {
         String val = _service.confirmLogin(login.getEmail(), login.getPassword());
         if(val.equals("User Not Found")) {
-            response.sendError(HttpServletResponse.SC_NOT_FOUND, "User Not Found");
+            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return "User Not Found";
         }
         else if(val.equals("Incorrect Password"))
         {
-            response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Incorrect Password");
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             return "Incorrect Password";
         }
         else{

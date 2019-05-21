@@ -32,11 +32,11 @@ public class RegisterController {
         }
         else if(val.equals("User Already Exits"))
         {
-            response.setStatus(HttpServletResponse.SC_BAD_REQUEST, "User already present");
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             return "User already present";
         }
         else{
-            response.setStatus(HttpServletResponse.SC_BAD_REQUEST, "Password and Repeat Password Should Match");
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             return "Password and Repeat Password Should Match";
         }
     }

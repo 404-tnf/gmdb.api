@@ -23,8 +23,8 @@ public class ReviewController {
             response.setStatus(HttpServletResponse.SC_ACCEPTED);
             return "Review Added";
         } else {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST,"review not added");
-            return "";
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            return "review not added";
         }
     }
 }
