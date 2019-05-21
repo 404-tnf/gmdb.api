@@ -74,7 +74,7 @@ public class LoginControllerTests {
         mockMvc.perform(post("/login")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(json))
-                .andExpect(status().isNotFound())
+                .andExpect(status().isBadRequest())
                 .andExpect(content().string("User Not Found"));
     }
 
@@ -87,7 +87,7 @@ public class LoginControllerTests {
         mockMvc.perform(post("/login")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(json))
-                .andExpect(status().isUnauthorized())
+                .andExpect(status().isBadRequest())
                 .andExpect(content().string("Incorrect Password"));
     }
 
